@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Contacts: {{ contacts.count }}</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>AccountId</th>
+            <th>Description</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Birthdate</th>
+            <th>Address</th>
+        </tr>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.account_id }}</td>
+                <td>{{ contact.description }}</td>
+                <td>{{ contact.department }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.birthdate }}</td>
+                <td>
+                    {{ contact.address }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Accounts: {{ accounts.count }}</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>AccountNumber</th>
+            <th>Description</th>
+            <th>Industry</th>
+            <th>Address</th>
+        </tr>
+        {% for account in accounts %}
+            <tr>
+                <td>{{ account.id }}</td>
+                <td>{{ account.name }}</td>
+                <td>{{ account.account_number }}</td>
+                <td>{{ account.description }}</td>
+                <td>{{ account.industry }}</td>
+                <td>{{ account.address }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>Users: {{ users.count }}</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>About</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Address</th>
+            <th>Company</th>
+            <th>Department</th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.first_name }} {{ user.last_name }}</td>
+                <td>{{ user.about }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.company }}</td>
+                <td>{{ user.department }}</td>
+                <td>{{ user.address }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
